@@ -4,7 +4,7 @@
     // Displays on the main menu.
     "name": "Soulync",
     // Displays underneath the name. Optional.
-    "subtitle": "",
+    "subtitle": "A journey to save yOUR soul.",
 
     // The version of your mod.
     "version": "v1.0.0",
