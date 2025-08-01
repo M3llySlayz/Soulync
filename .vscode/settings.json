@@ -1,0 +1,16 @@
+{
+    "Lua.diagnostics.disable": [
+        "undefined-global",
+        "redefined-local",
+        "unused-local",
+        "cast-local-type",
+        "undefined-doc-class",
+        "undefined-field",
+        "deprecated",
+        "duplicate-set-field",
+        "circle-doc-class",
+        "duplicate-doc-field",
+        "unbalanced-assignments",
+        "undefined-doc-name"
+    ]
+}

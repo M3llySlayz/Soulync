@@ -607,7 +607,7 @@ function Battle:hurt(amount, exact, target)
     -- Now it's time to actually damage them!
     if isClass(target) and target:includes(PartyBattler) then
 		if self.encounter.PINCER and self.attack_left ~= target.left then
-			target:hurt(amount * Kristal.getLibConfig("pincer_battles", "opposite_mult") or 1.25, exact)
+			target:hurt(amount * (Kristal.getLibConfig("pincer_battles", "opposite_mult") or 1.25), exact)
 			if Kristal.getLibConfig("pincer_battles", "hit_face") then
 				target.left = self.attack_left
 				target.sprite.flip_x = target.left
@@ -623,7 +623,7 @@ function Battle:hurt(amount, exact, target)
         for _,battler in ipairs(self.party) do
             if not battler.is_down then
 				if self.encounter.PINCER and self.attack_left ~= battler.left then
-					battler:hurt(amount * Kristal.getLibConfig("pincer_battles", "opposite_mult") or 1.25, exact, nil, {all = true})
+					battler:hurt(amount * (Kristal.getLibConfig("pincer_battles", "opposite_mult") or 1.25), exact, nil, {all = true})
 					if Kristal.getLibConfig("pincer_battles", "hit_face") then
 						battler.left = self.attack_left
 						battler.sprite.flip_x = battler.left
