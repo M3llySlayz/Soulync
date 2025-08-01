@@ -11,7 +11,7 @@ function item:init()
     -- Item type (item, key, weapon, armor)
     self.type = "weapon"
     -- Item icon (for equipment)
-    self.icon = "ui/menu/equip/bow"
+    self.icon = "ui/menu/icon/bow"
     -- Whether this item is for the light world
     self.light = false
 
