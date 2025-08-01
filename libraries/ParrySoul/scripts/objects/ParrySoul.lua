@@ -80,16 +80,6 @@ function ParrySoul:update()
     self.parry_timer = Utils.approach(self.parry_timer, 0, DTMULT)
     self.cooldown_timer = Utils.approach(self.cooldown_timer, 0, DTMULT)
     self.parry_inv =  Utils.approach(self.parry_inv, 0, DTMULT)
-    
-    if self.cooldown_timer > 0 then
-        self.cooldown_timer = self.cooldown_timer - (1 * DT)
-    end
-    if self.parry_inv > 0 then
-        self.parry_inv = self.parry_inv - (1 * DT)
-    end
-
-
-
 end
 
 -- Why is this not a default function?
