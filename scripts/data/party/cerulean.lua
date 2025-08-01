@@ -13,7 +13,7 @@ function character:init()
     -- Display level (saved to the save file)
     self.level = Game.chapter
     -- Default title / class (saved to the save file)
-    self.title = "Nerd\nA gril trying to\nfind her lost love."
+    self.title = "Nerd\nA girl trying to\nfind her lost love."
 
     -- Determines which character the soul comes from (higher number = higher priority)
     self.soul_priority = 1
@@ -64,15 +64,15 @@ function character:init()
     self.lw_armor_default = "light/bandage"
 
     -- Character color (for action box outline and hp bar)
-    self.color = {0, 0.5, 1}
+    self.color = {0, 1, 0.8}
     -- Damage color (for the number when attacking enemies) (defaults to the main color)
-    self.dmg_color = {0.5, 0.75, 1}
+    self.dmg_color = {0, 1, 0.8}
     -- Attack bar color (for the target bar used in attack mode) (defaults to the main color)
-    self.attack_bar_color = {0, 0.5, 1}
+    self.attack_bar_color = {0, 1, 0.8}
     -- Attack box color (for the attack area in attack mode) (defaults to darkened main color)
-    self.attack_box_color = {0, 0.25, 1}
+    self.attack_box_color = {0, 0.5, 0.3}
     -- X-Action color (for the color of X-Action menu items) (defaults to the main color)
-    self.xact_color = {0.5, 0.75, 1}
+    self.xact_color = {0, 1, 0.8}
 
     -- Head icon in the equip / power menu
     self.menu_icon = "party/cerulean/head"
