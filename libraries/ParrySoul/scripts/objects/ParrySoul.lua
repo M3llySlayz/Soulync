@@ -29,7 +29,7 @@ function ParrySoul:init(x, y)
     -- Customizable stuff. Timing is in frames at 30 FPS.
     self.can_parry = true       -- Determines if you can parry at all.
     self.parry_window = 5       -- How large of a window you have to parry a bullet.
-    self.parry_length = 30      -- Invincibility length after a successful parry.
+    self.parry_length = 10     -- Invincibility length after a successful parry.
     self.parry_cap = 60         -- Maximum duration for parry invincibility, in the event that multiple bullets are parried in quick succession.
     self.cooldown = 30          -- Recovery time between one parry and the next, assuming the first one failed.
 

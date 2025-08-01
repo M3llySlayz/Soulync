@@ -44,6 +44,14 @@ function item:init()
 
     --only Cerulean can use this weapon
     self.can_equip = {"cerulean"}
+
+    --BOLTS
+
+    self.bolt_speed = 6
+    self.bolt_acceleration = 2
+    self.bolt_count = 4
+    self.multibolt_variance = {{40, 50, 60}, 80, {70, 80}}
+    self.calculate_multibolt_from_last_bolt = false
 end
 
 return item
