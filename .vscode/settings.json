@@ -11,6 +11,10 @@
         "circle-doc-class",
         "duplicate-doc-field",
         "unbalanced-assignments",
-        "undefined-doc-name"
+        "undefined-doc-name",
+        "inject-field"
+    ],
+    "Lua.diagnostics.globals": [
+        "properties"
     ]
 }

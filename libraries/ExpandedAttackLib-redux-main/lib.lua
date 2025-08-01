@@ -61,7 +61,7 @@ function Lib:init()
     end)
 
     Utils.hook(Item, "onAttack", function(orig, self, action, battler, enemy, score, bolts, close)
-        local src = Assets.stopAndPlaySound(battler.chara:getAttackSound() or "laz_c")
+        local src = Assets.stopAndPlaySound(battler.chara:getAttackSound() or "laz_c" or "squeak")
         src:setPitch(battler.chara:getAttackPitch() or 1)
 
         Game.battle.actions_done_timer = 1.2

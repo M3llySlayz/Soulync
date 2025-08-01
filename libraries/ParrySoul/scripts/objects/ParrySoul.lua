@@ -1,10 +1,10 @@
 local ParrySoul, super = Class(Soul)
 
 function ParrySoul:init(x, y)
-    super:init(self, x, y)
+    super.init(self, x, y)
     
     -- Default color is cyan {0,1,1}, but feel free to make it whatever you want.
-    self.color = {0,1,1}
+    self.color = {0,1,0.8}
     -- Here's orange, if you want it.
     -- self.color = {1,(148/255),0}
 
@@ -36,7 +36,7 @@ function ParrySoul:init(x, y)
 end
 
 function ParrySoul:update()
-    super:update(self)
+    super.update(self)
     if self.transitioning then
         if self.parried_loop_sfx then
             self.parried_loop_sfx:stop()
@@ -58,6 +58,14 @@ function ParrySoul:update()
 
     self.parried_loop_sfx:setPitch(Utils.clampMap(self.parry_inv, 0, self.parry_length / 2, 0.1,1))
     self.parried_loop_sfx:setVolume(Utils.clampMap(self.parry_inv, 0, self.parry_length / 2, 0, 1))
+
+    if Input.pressed("confirm") then
+        if self:canParry() then
+            print("k")
+        else
+            print("nah")
+        end
+    end
 
     if Input.pressed("confirm") and self:canParry() then
         self:flash()
@@ -98,7 +106,7 @@ function ParrySoul:canParry()
     -- Cooldown is over
     -- Parrying is enabled
     -- Not in the middle of damage i-frames
-    if self.parry_timer == 0 and self.cooldown_timer == 0 and self.can_parry == true and self.inv_timer == 0 then
+    if self.parry_timer == 0 and self.cooldown_timer == 0 and self.can_parry == true and self.parry_inv == 0 then
         return true
     else
         return false
@@ -131,7 +139,7 @@ function ParrySoul:draw()
         self.color = Utils.clampMap(self.cooldown_timer, 0, self.cooldown / 2, {r,g,b},{(r * 0.5),(g * 0.5),(b * 0.5)})
     end
 
-    super:draw(self)
+    super.draw(self)
     self.color = {r,g,b}
 
 end
@@ -168,7 +176,7 @@ function ParrySoul:onCollide(bullet)
             bullet.damage = nil
         end
     end
-        super:onCollide(self, bullet)
+    super.onCollide(self, bullet)
 end
 
 

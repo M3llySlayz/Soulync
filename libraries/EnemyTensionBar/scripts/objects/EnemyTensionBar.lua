@@ -6,7 +6,7 @@ function EnemyTensionBar:init(x, y, dont_animate)
         x = x2 - 25
     end
 
-    super:init(self, x or SCREEN_WIDTH+32, y or 40)
+    super.init(self, x or SCREEN_WIDTH+32, y or 40)
 
     self.layer = BATTLE_LAYERS["ui"] - 1
 
@@ -165,7 +165,7 @@ function EnemyTensionBar:update()
         self.tsiner = self.tsiner + DTMULT
     end
 
-    super:update(self)
+    super.update(self)
 end
 
 function EnemyTensionBar:draw()
@@ -272,7 +272,7 @@ function EnemyTensionBar:draw()
         love.graphics.print("X", -20, 110)
     end
 
-    super:draw(self)
+    super.draw(self)
 end
 
 return EnemyTensionBar

@@ -5,7 +5,7 @@
 local Bullet, super = Utils.hookScript(Bullet)
 
 function Bullet:onCollide(soul)
-    super:onCollide(self, soul)
+    super.onCollide(self, soul)
 	
 	Game.battle.attack_left = self.attacker.left
 end
