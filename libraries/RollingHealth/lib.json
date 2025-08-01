@@ -30,7 +30,7 @@
         // the HP target and the current HP is
         // Formula: roll_speed * ((1 - speed_up) ^ (difference / max_hp))
         // Set to 0 to disable this.
-        "speed_up": 0,
+        "speed_up": 1.2,
         // Whether to cut off the number.
         "stencil": false,
         // Whether to darker the previous number.
