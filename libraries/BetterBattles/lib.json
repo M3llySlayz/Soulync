@@ -1,0 +1,34 @@
+{
+    "id": "better_battles",
+    "version": "v8.2",
+    "engineVer": "v0.8.1",
+    "authors": [
+        "AcousticJamm",
+        "FireRainV"
+    ],
+	"config": {
+		//Party souls
+		"party_souls": true,
+		
+		//Tiredness bar
+		"tiredness_bar": true,
+		
+		//Back attacks
+		"back_attack": true,
+		
+		//Spare tactics
+		"spare_tactics": true,
+        "dynamic_battle_leader": false,
+		"down_flee": false,
+		"down_spare_all": false,
+        "minimum_spare_all": 2,
+		
+		// Skill button
+		"skill_button": true,
+		"magic_name": "Magic",
+        "magic_description": "Cast\nSpells",
+		
+		// Command
+		"command_times": 1,
+	},
+}

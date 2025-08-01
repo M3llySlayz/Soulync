@@ -1,0 +1,26 @@
+{
+    "id": "xtractrl",
+    "authors": ["Elioze"],
+    "version": "v2.1.0",
+    "engineVer": "v0.9.0",
+    //Exemple of keybinds and how to set them
+    "keybinds": [
+        //{   "name": "LONGASSNAMETOTEST",      "id": "test2",      "keys": ["m"],       "hide": false   },
+        //{   "name": "Test3",                  "id": "test3",      "keys": ["u"],       "hide": false   },
+        //{   "name": "Test4",                  "id": "test4",      "keys": ["r"],       "hide": false   },
+    ],
+    "config":{
+        "saveAfterModification": false,     //Save keybinds when modifying them.
+        "cancelToExit": false,              //Allow you to press the cancel key to get out of the binding menu.
+        "hideIfNoExtra": true,              //Hide the page counter and the arrows when there is no extra keybind.
+        "showArrow": true,                  //Show arrows next to the page counter if conditions are met.
+        "bannedKeys": {                     //List of key to hide in the binding menu. (Contains an example)
+            //"Name_of_key": "id_of_key"
+            "Console":          "console",
+            "Debug Menu":       "debug_menu",
+            "Object Selector":  "object_selector",
+            "Fast Forward":     "fast_forward",
+            "Mod Rebind":       "mod_rebind"
+        },
+    }
+}
