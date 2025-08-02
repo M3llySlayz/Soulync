@@ -49,7 +49,7 @@ function preview:draw()
         for _,particle in ipairs(self.particles) do
             local alpha = (particle.radius / particle.max_radius) * self.fade
 
-            Draw.setColor(1, 1, 0.5, alpha)
+            Draw.setColor(0, 1, 0.8, alpha)
             love.graphics.circle("fill", particle.x, particle.y, particle.radius)
         end
 
