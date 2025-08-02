@@ -29,9 +29,9 @@ function ParrySoul:init(x, y)
     -- Customizable stuff. Timing is in frames at 30 FPS.
     self.can_parry = true       -- Determines if you can parry at all.
     self.parry_window = 5       -- How large of a window you have to parry a bullet.
-    self.parry_length = 10     -- Invincibility length after a successful parry.
+    self.parry_length = 30     -- Invincibility length after a successful parry.
     self.parry_cap = 60         -- Maximum duration for parry invincibility, in the event that multiple bullets are parried in quick succession.
-    self.cooldown = 30          -- Recovery time between one parry and the next, assuming the first one failed.
+    self.cooldown = 60          -- Recovery time between one parry and the next, assuming the first one failed.
     self.base_tension = 1.6       -- TP given upon a successful parry.
 
 end
@@ -153,7 +153,7 @@ function ParrySoul:onCollide(bullet)
             self.parry_inv = self.parry_cap
         end
         self.did_parry = true
-        self.cooldown_timer = 5             -- You can chain parries as long as you keep timing them.
+        self.cooldown_timer = 30
         Game:giveTension((bullet:getDamage() / math.pi) + self.base_tension)
 
     end
