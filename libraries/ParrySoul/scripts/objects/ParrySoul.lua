@@ -145,7 +145,6 @@ function ParrySoul:isParrying()
 end
 
 function ParrySoul:onCollide(bullet)
-    local oldDamage = bullet.damage or 0
     if self:isParrying() and not self.did_parry then
         self.parried_sfx:stop()
         self.parried_sfx:play()
@@ -155,16 +154,20 @@ function ParrySoul:onCollide(bullet)
         end
         self.did_parry = true
         self.cooldown_timer = 5             -- You can chain parries as long as you keep timing them.
-        
+        Game:giveTension((bullet:getDamage() / math.pi) + self.base_tension)
+
+    end
+    if bullet.damage then
+        if bullet.damage ~= 0 then bullet.parrydmg_old = bullet.damage end
     end
     if self.parry_inv > 0 then
-        Game:giveTension((oldDamage / math.pi) + self.base_tension)
         bullet.damage = 0
+        bullet.parried = true
     else
-        if oldDamage then
-            bullet.damage = oldDamage
+        if bullet.parrydmg_old then
+            bullet.damage = bullet.parrydmg_old
         else
-            bullet.damage = 0
+            bullet.damage = nil
         end
     end
     super.onCollide(self, bullet)
