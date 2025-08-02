@@ -61,9 +61,9 @@ function ParrySoul:update()
 
     if Input.pressed("confirm") then
         if self:canParry() then
-            print("k")
+            Kristal.Console:log("k")
         else
-            print("nah")
+            Kristal.Console:log("nah")
         end
     end
 
