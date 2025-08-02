@@ -3,6 +3,16 @@ local character, super = Class(PartyMember, "cerulean")
 function character:init()
     super.init(self)
 
+    local function discoveredSelf()
+    if Game:getFlag("self_discovery") == 2 then
+        return true
+    else
+        return false
+    end
+end
+
+local colorofCerulean = discoveredSelf() and {0, 1, 0.8} or {0.5, 0.5, 0.5}
+
      -- Display name
     self.name = "Cerulean"
 
@@ -18,7 +28,7 @@ function character:init()
     -- Determines which character the soul comes from (higher number = higher priority)
     self.soul_priority = 1
     -- The color of this character's soul (optional, defaults to red)
-    self.soul_color = Game:getFlag("self_discovery") == true and {0, 1, 0.8} or {0.5, 0.5, 0.5}
+    self.soul_color = colorofCerulean
 
     -- Whether the party member can act / use spells
     self.has_act = true
@@ -64,15 +74,15 @@ function character:init()
     self.lw_armor_default = "light/bandage"
 
     -- Character color (for action box outline and hp bar)
-    self.color = {0, 1, 0.8}
+    self.color = colorofCerulean
     -- Damage color (for the number when attacking enemies) (defaults to the main color)
-    self.dmg_color = {0, 1, 0.8}
+    self.dmg_color = colorofCerulean
     -- Attack bar color (for the target bar used in attack mode) (defaults to the main color)
-    self.attack_bar_color = {0, 1, 0.8}
+    self.attack_bar_color = colorofCerulean
     -- Attack box color (for the attack area in attack mode) (defaults to darkened main color)
-    self.attack_box_color = {0, 0.5, 0.3}
+    self.attack_box_color = discoveredSelf() and {0, 0.5, 0.3} or {0.3, 0.3, 0.3}
     -- X-Action color (for the color of X-Action menu items) (defaults to the main color)
-    self.xact_color = {0, 1, 0.8}
+    self.xact_color = colorofCerulean
 
     -- Head icon in the equip / power menu
     self.menu_icon = "party/cerulean/head"
