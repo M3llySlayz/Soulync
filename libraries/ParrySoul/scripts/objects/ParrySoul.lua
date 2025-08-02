@@ -152,7 +152,7 @@ function ParrySoul:onCollide(bullet)
             self.parry_inv = self.parry_cap
         end
         self.did_parry = true
-        self.cooldown_timer = 0             -- You can chain parries as long as you keep timing them.
+        self.cooldown_timer = 5             -- You can chain parries as long as you keep timing them.
 
     end
     if bullet.damage then
