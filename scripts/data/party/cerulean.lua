@@ -18,7 +18,7 @@ function character:init()
     -- Determines which character the soul comes from (higher number = higher priority)
     self.soul_priority = 1
     -- The color of this character's soul (optional, defaults to red)
-    self.soul_color = {0, 1, 0.8}
+    self.soul_color = Game:getFlag("self_discovery") == true and {0, 1, 0.8} or {0.5, 0.5, 0.5}
 
     -- Whether the party member can act / use spells
     self.has_act = true
